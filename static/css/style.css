@@ -1,32 +1,94 @@
 body {
+  min-width: min-content;
+  min-height: min-content;
   font-family: "Open Sans", sans-serif;
-  color: rgb(44, 44, 44);
+  color: rgb(9, 9, 9);
   background-color: rgb(206, 199, 211);
 }
+
 .top-panel {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  background-color: white;
-  font-size: 30px;
+  color: rgb(107, 107, 108);
+  font-size: 40px;
   width: 100%;
-  height: 100px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  align-content: center;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+}
+
+.font {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.top-panel select:hover {
+  color: rgb(178, 164, 239);
+}
+
+option:not(selected) {
+  font-size: 35px;
+  color:rgb(107, 107, 108)
+}
+
+
+.bg-calendar {
+  /* min-width: 250px; */
+
+  max-width: 100%;
+  background-color: rgb(128, 109, 172);
+  margin: 10px 40px;
+  padding: 10px 20px;
+  border-radius: 20px;
   display: flex;
   justify-content: space-between;
 }
-.container {
-  max-width: 100px;
-  text-align: center;
-  margin: 20px 20px;
+
+.events {
+  background-color: white;
+  border-radius: 20px;
+  width: 40%;
+  min-width: 200px;
 }
 
-.calendar {
-  width: 40%;
-  background-color: rgb(226, 194, 255);
-  margin: 50px;
+.events h1 {
+  text-align: center;
+}
+
+table {
+  text-align: center;
+  min-width: 300px;
+  width: 50%;
+  height: 100%;
+  font-weight: 600;
+  font-size: 26px;
+  margin: 10px;
+}
+
+th, td {
+  color: rgb(255, 255, 255);
+  padding: 5px 5px;
+}
+
+.weeknames {
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.days:hover {
+  text-decoration: underline;
+}
+
+.curr_day {
+  color: rgb(82, 0, 158);
 }
 
 .menu {
-  max-height: 150px;
-  max-width: 40px;
-  overflow-x:hidden;
-  overflow-y:auto;
+  border: none;
+  text-align: center;
+  padding: 2px;
+  max-height: auto;
+  max-width: auto;
 }
