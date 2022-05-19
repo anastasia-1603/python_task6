@@ -91,4 +91,6 @@ th, td {
   padding: 2px;
   max-height: auto;
   max-width: auto;
+  outline: 0;
 }
+
