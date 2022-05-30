@@ -20,6 +20,13 @@ body {
   align-self: center;
 }
 
+input {
+  border-color:rgb(178, 164, 239);
+  border-radius: 5px;
+  background-color: white;
+  font-size: 15px;
+}
+
 .font {
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
@@ -40,7 +47,7 @@ option:not(selected) {
   max-width: 100%;
   background-color: rgb(128, 109, 172);
   margin: 10px 40px;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -51,13 +58,26 @@ option:not(selected) {
   border-radius: 20px;
   width: 40%;
   min-width: 200px;
+  
+}
+
+.time {
+  width: min-content;
+  padding: 0px;
+}
+
+.event {
+  color: black;
+  width: 100%;
+  margin:10px;
+  font-size: 20px;
 }
 
 .events h1 {
   text-align: center;
 }
 
-table {
+.month-calendar {
   text-align: center;
   min-width: 300px;
   width: 50%;
@@ -65,10 +85,10 @@ table {
   font-weight: 600;
   font-size: 26px;
   margin: 10px;
+  color: rgb(255, 255, 255);
 }
 
 th, td {
-  color: rgb(255, 255, 255);
   padding: 5px 5px;
 }
 
