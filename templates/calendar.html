@@ -80,9 +80,16 @@
                     {% endfor %}
                     <tr>
                         <td>
-                            <form action="/" method="POST">
-                                <input type="submit" onclick="this.form.submit" >
-                            </form>
+                            <input height="38" type="time" id="time" name="time" />
+                        </td>
+                        <td>
+                            <textarea class="area" rows="1" cols="10" placeholder="Add..." id="event_area"></textarea>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <btn onclick="add({{day}})" class="">Save</btn>
                         </td>
                     </tr>
                 </table>
@@ -131,36 +138,11 @@
         }
 
         function func_d(day) {
-
-            $.ajax({
-                data: {
-                    year: year,
-                    month: month,
-                    day: day
-                },
-                type: 'GET',
-                url: '/'
-            }).done(function (data) {
-
-                if (data.error) {
-                    console.log("error");
-                }
-                else {
-                    console.log(data);
-                    document.open();
-                    document.write(data);
-                    document.close()
-                }
-            });
-        }
-
-        function add() {
             var months = document.getElementById("month")
             var years = document.getElementById("year")
 
             var month = months.value
             var year = years.value
-
             $.ajax({
                 data: {
                     year: year,
@@ -169,6 +151,36 @@
                 },
                 type: 'GET',
                 url: '/'
+            }).done(function (data) {
+                if (data.error) {
+                    console.log("error");
+                }
+                else {
+                    console.log(data);
+                    document.open();
+                    document.write(data);
+                    document.close()
+                }
+            });
+        }
+
+        function add(day) {
+            var months = document.getElementById("month")
+            var years = document.getElementById("year")
+
+            var month = months.value
+            var year = years.value
+            event = document.getElementById("event_area").value
+
+            $.ajax({
+                data: {
+                    year: year,
+                    month: month,
+                    day: day,
+                    event: event
+                },
+                type: 'GET',
+                url: '/add_event'
             }).done(function (data) {
 
                 if (data.error) {
@@ -182,9 +194,8 @@
                 }
             });
         }
-
     </script>
-
+    <script> scr = "{{ url_for('static', filename='js/action.js') }}" </script>
 </body>
 
 </html>

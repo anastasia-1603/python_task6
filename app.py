@@ -64,12 +64,29 @@ def start_page():
                            curr_year=logic.get_curr_year(), events=dbase.getEvents(day, month, year))
 
 
+# @app.route('/day',  methods=['GET'])
+# def day():
+#     db = get_db()
+#     dbase = FDataBase(db)
+#     event = ""
+#     if len(request.args) == 3:
+#         year = int(request.args['year'])
+#         month = int(request.args['month'])
+#         day = int(request.args['day'])
+#         event = dbase.getEvents(day, month, year)[3]
+#     return event, 200
+
+
+@app.route('/add_event',  methods=['GET'])
 def add_event():
     db = get_db()
     dbase = FDataBase(db)
     if 'year' in request.args or 'month' in request.args or 'day' in request.args:
-        dbase.addEvent(request.args['day'], request.args['month'], request.args['year'], "текст")
-    return redirect(url_for('start_page'))
+        year = int(request.args['year'])
+        month = int(request.args['month'])
+        day = int(request.args['day'])
+        dbase.addEvent(request.args['day'], request.args['month'], request.args['year'], request.args['event'])
+    return redirect(url_for('start_page', day=day, month=month, year=year))
 
 
 if __name__ == "__main__":

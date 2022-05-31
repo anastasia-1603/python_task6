@@ -114,3 +114,15 @@ th, td {
   outline: 0;
 }
 
+.area {
+  border-color: rgb(178, 164, 239);
+  border-radius: 5px;
+  background-color: white;
+  color: -internal-light-dark(black, white);
+  border-width: 2px;
+  border-collapse: collapse;
+  border-style: inset;
+  margin-top: 6px;
+  height: 38px;
+}
+
